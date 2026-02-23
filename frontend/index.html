@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ABC Company Knowledge Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>ABC Company Knowledge Assistant</h1>
+  <p class="subtitle">Ask questions and get answers from internal documents</p>
+
+  <div class="card">
+    <textarea id="questionInput" placeholder="Type your question here..."></textarea>
+
+    <div class="buttons">
+      <button onclick="askQuestion()">Get Answer</button>
+      <button class="clear" onclick="clearAll()">Clear</button>
+    </div>
+  </div>
+
+  <!-- RESULT SECTION -->
+  <div id="resultBox" class="result hidden">
+
+    <h2>Answer</h2>
+    <div id="answerText" class="answer">—</div>
+
+    <div class="scores">
+      <div>
+        <span class="label">Confidence:</span>
+        <span id="confidence">—</span>
+      </div>
+
+      <div>
+        <span class="label">Similarity:</span>
+        <span id="similarity">—</span>
+      </div>
+      <div>
+        <span class="label">Source:</span>
+        <span id="source">—</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

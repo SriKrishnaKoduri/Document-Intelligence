@@ -1,0 +1,163 @@
+/* ========== Global ========== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0c111c, #121a2b);
+  color: #ffffff;
+  margin: 0;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ========== Container ========== */
+.container {
+  width: 850px;
+  max-width: 95%;
+}
+
+/* ========== Title Section ========== */
+h1 {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #4c7cff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #9aa4b2;
+  margin-bottom: 35px;
+  font-size: 15px;
+}
+
+/* ========== Card Styling ========== */
+.card {
+  background: #161b26;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* ========== Textarea ========== */
+textarea {
+  width: 100%;
+  height: 110px;
+  background: #0f1420;
+  color: white;
+  border: 1px solid #2a3346;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+  resize: none;
+  transition: 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4c7cff;
+  box-shadow: 0 0 8px rgba(76, 124, 255, 0.4);
+}
+
+/* ========== Buttons ========== */
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4c7cff, #3a63e0);
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(76, 124, 255, 0.4);
+}
+
+button.clear {
+  background: #2a3346;
+}
+
+button.clear:hover {
+  background: #39465f;
+}
+
+/* ========== Result Section ========== */
+.result {
+  margin-top: 35px;
+  background: #161b26;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ========== Answer Box ========== */
+.answer {
+  margin-top: 15px;
+  font-size: 17px;
+  line-height: 1.7;
+  background: #0f1420;
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 4px solid #4c7cff;
+}
+
+/* ========== Scores Section ========== */
+.scores {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #2a3346;
+}
+
+.label {
+  color: #9aa4b2;
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+/* ========== Score Bars (Optional Upgrade Ready) ========== */
+.score-bar {
+  height: 8px;
+  background: #2a3346;
+  border-radius: 5px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4c7cff, #00c6ff);
+  width: 0%;
+  transition: width 0.6s ease;
+}
+
+/* ========== Source Documents ========== */
+.source-card {
+  margin-top: 12px;
+  padding: 15px;
+  background: #0f1420;
+  border-radius: 10px;
+  border: 1px solid #2a3346;
+  font-size: 14px;
+}
+
+.source-card strong {
+  color: #4c7cff;
+}
+
+/* ========== Utility ========== */
+.hidden {
+  display: none;
+}
