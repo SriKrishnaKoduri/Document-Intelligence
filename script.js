@@ -20,13 +20,16 @@ async function askQuestion() {
   resultBox.classList.remove("hidden");
 
   try {
-    const response = await fetch("http://localhost:8000/ask-recruiter", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ question: question })
-    });
+    const response = await fetch(
+      "https://krishna0506-document-intelligence.hf.space/ask-recruiter",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ question: question })
+      }
+    );
 
     const data = await response.json();
 
@@ -38,7 +41,7 @@ async function askQuestion() {
 
   } catch (error) {
     console.error(error);
-    answerText.innerText = "❌ Could not connect to backend. Is FastAPI running?";
+    answerText.innerText = "❌ Could not connect to backend.";
   }
 }
 
