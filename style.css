@@ -1,163 +1,281 @@
+/* ========== Import ========== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ========== CSS Variables ========== */
+:root {
+  --bg-base:       #0b0f1a;
+  --bg-surface:    #141922;
+  --bg-inset:      #0d1119;
+  --border:        #1f2b3e;
+  --border-hover:  #2e3f58;
+  --accent:        #4f7eff;
+  --accent-2:      #00c8ff;
+  --accent-glow:   rgba(79, 126, 255, 0.18);
+  --text-primary:  #e8edf5;
+  --text-muted:    #7a889e;
+  --text-dim:      #4a5668;
+  --radius-lg:     16px;
+  --radius-md:     10px;
+  --radius-sm:     7px;
+  --shadow-card:   0 2px 4px rgba(0,0,0,0.3), 0 12px 40px rgba(0,0,0,0.5);
+}
+
 /* ========== Global ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #0c111c, #121a2b);
-  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
   margin: 0;
-  padding: 60px 20px;
+  padding: 60px 20px 80px;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
+
+  /* subtle grid texture */
+  background-image:
+    linear-gradient(135deg, #0b0f1a 0%, #111826 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.015) 39px,
+      rgba(255,255,255,0.015) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.015) 39px,
+      rgba(255,255,255,0.015) 40px
+    );
 }
 
 /* ========== Container ========== */
 .container {
-  width: 850px;
+  width: 860px;
   max-width: 95%;
 }
 
 /* ========== Title Section ========== */
 h1 {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 600;
-  margin-bottom: 8px;
-  background: linear-gradient(90deg, #4c7cff, #00c6ff);
+  letter-spacing: -0.5px;
+  margin: 0 0 6px;
+  background: linear-gradient(100deg, #6897ff 0%, #00c8ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
-  color: #9aa4b2;
-  margin-bottom: 35px;
-  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  font-size: 14px;
+  letter-spacing: 0.1px;
 }
 
 /* ========== Card Styling ========== */
 .card {
-  background: #161b26;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
-  transition: 0.3s ease;
+  background: var(--bg-surface);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .card:hover {
+  border-color: var(--border-hover);
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.35), 0 18px 50px rgba(0,0,0,0.55);
 }
 
 /* ========== Textarea ========== */
 textarea {
   width: 100%;
   height: 110px;
-  background: #0f1420;
-  color: white;
-  border: 1px solid #2a3346;
-  border-radius: 10px;
-  padding: 14px;
-  font-size: 15px;
-  resize: none;
-  transition: 0.3s ease;
+  background: var(--bg-inset);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 13px 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14.5px;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  line-height: 1.6;
+}
+
+textarea::placeholder {
+  color: var(--text-dim);
 }
 
 textarea:focus {
   outline: none;
-  border-color: #4c7cff;
-  box-shadow: 0 0 8px rgba(76, 124, 255, 0.4);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 /* ========== Buttons ========== */
 .buttons {
-  margin-top: 15px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 button {
-  padding: 10px 18px;
+  padding: 9px 18px;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #4c7cff, #3a63e0);
-  color: white;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #4f7eff, #3a62e8);
+  color: #fff;
   cursor: pointer;
-  margin-right: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
   font-weight: 500;
-  transition: 0.3s ease;
+  letter-spacing: 0.1px;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
 }
 
 button:hover {
+  opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(76, 124, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(79, 126, 255, 0.35);
+}
+
+button:active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 button.clear {
-  background: #2a3346;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
 }
 
 button.clear:hover {
-  background: #39465f;
+  background: var(--border);
+  color: var(--text-primary);
+  box-shadow: none;
 }
 
 /* ========== Result Section ========== */
 .result {
-  margin-top: 35px;
-  background: #161b26;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  margin-top: 28px;
+  background: var(--bg-surface);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.result h2, .result h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  margin: 0 0 12px;
 }
 
 /* ========== Answer Box ========== */
 .answer {
-  margin-top: 15px;
-  font-size: 17px;
-  line-height: 1.7;
-  background: #0f1420;
-  padding: 18px;
-  border-radius: 10px;
-  border-left: 4px solid #4c7cff;
+  margin-top: 12px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  background: var(--bg-inset);
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent);
+  color: var(--text-primary);
 }
 
 /* ========== Scores Section ========== */
 .scores {
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #2a3346;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.score-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .label {
-  color: #9aa4b2;
-  margin-right: 6px;
-  font-size: 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
 }
 
-/* ========== Score Bars (Optional Upgrade Ready) ========== */
+/* ========== Score Bars ========== */
 .score-bar {
-  height: 8px;
-  background: #2a3346;
-  border-radius: 5px;
-  margin-top: 6px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 99px;
   overflow: hidden;
 }
 
 .score-fill {
   height: 100%;
-  background: linear-gradient(90deg, #4c7cff, #00c6ff);
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
   width: 0%;
-  transition: width 0.6s ease;
+  transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ========== Source Documents ========== */
 .source-card {
-  margin-top: 12px;
-  padding: 15px;
-  background: #0f1420;
-  border-radius: 10px;
-  border: 1px solid #2a3346;
-  font-size: 14px;
+  margin-top: 10px;
+  padding: 14px 16px;
+  background: var(--bg-inset);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 13.5px;
+  line-height: 1.6;
+  transition: border-color 0.2s ease;
+}
+
+.source-card:hover {
+  border-color: var(--border-hover);
 }
 
 .source-card strong {
-  color: #4c7cff;
+  color: var(--accent);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.2px;
 }
 
 /* ========== Utility ========== */
 .hidden {
   display: none;
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4f6a;
 }
